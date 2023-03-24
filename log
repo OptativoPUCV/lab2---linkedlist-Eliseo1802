@@ -1,0 +1,12 @@
+Fri 24 Mar 2023 06:02:56 PM UTC: 
+ list.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+list.c: In function ‘createList’:
+list.c:33:9: error: ‘list’ undeclared (first use in this function); did you mean ‘List’?
+   33 |     if (list == NULL) {
+      |         ^~~~
+      |         List
+list.c:33:9: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+af326ef

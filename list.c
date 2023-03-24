@@ -46,15 +46,15 @@ void *firstList(List *lista) {
 }
 
 void * nextList(List * list) {
-  
+  return NULL;
 }
 
 void * lastList(List * list) {
-    return NULL;
+  return NULL;
 }
 
 void * prevList(List * list) {
-    return NULL;
+  return NULL;
 }
 
 void pushFront(List * list, void * data) {

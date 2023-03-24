@@ -46,7 +46,7 @@ void *firstList(List *lista) {
 }
 
 void * nextList(List * list) {
-  a
+  
 }
 
 void * lastList(List * list) {

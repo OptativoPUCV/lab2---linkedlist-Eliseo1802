@@ -43,7 +43,7 @@ void *firstList(List *lista) {
     if (lista == NULL || lista->head == NULL) {
         return NULL;
     }
-    lista.current = lista.head;
+    lista->current = lista->head;
     return lista->current->data;
 }
 

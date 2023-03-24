@@ -31,3 +31,9 @@ list.c:46:26: error: ‘lista’ is a pointer; did you mean to use ‘->’?
       |                          ->
 Compilation failed
 697eeb4
+Fri 24 Mar 2023 06:04:24 PM UTC: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|5
+total_score: 15/70
+ab403bd

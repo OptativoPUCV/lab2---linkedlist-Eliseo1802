@@ -16,3 +16,18 @@ Fri 24 Mar 2023 06:03:05 PM UTC:
  tests:  1|5
 total_score: 10/70
 4930867
+Fri 24 Mar 2023 06:04:08 PM UTC: 
+ list.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘firstList’:
+list.c:46:10: error: ‘lista’ is a pointer; did you mean to use ‘->’?
+   46 |     lista.current = lista.head;
+      |          ^
+      |          ->
+list.c:46:26: error: ‘lista’ is a pointer; did you mean to use ‘->’?
+   46 |     lista.current = lista.head;
+      |                          ^
+      |                          ->
+Compilation failed
+697eeb4

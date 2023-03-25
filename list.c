@@ -29,34 +29,34 @@ Node * createNode(void * data) {
 }
 
 List *createList(void) {
-  List *lista = (List *)malloc(sizeof(List));
-  if (lista == NULL)
+  List *list = (List *)malloc(sizeof(List));
+  if (list == NULL)
     exit(EXIT_FAILURE);
-  lista->head = NULL;
-  lista->tail = NULL;
-  lista->current = NULL;
-  return lista;
+  list->head = NULL;
+  list->tail = NULL;
+  list->current = NULL;
+  return list;
 }
 
-void *firstList(List *lista) {
-  if (lista == NULL || lista->head == NULL)
+void *firstList(List *list) {
+  if (list == NULL || list->head == NULL)
     return NULL;
-  lista->current = lista->head;
-  return lista->current->data;
+  list->current = list->head;
+  return list->current->data;
 }
 
-void * nextList(List * lista) {
-  if (lista == NULL || lista->current == NULL || lista->current->next == NULL)
+void * nextList(List * list) {
+  if (list == NULL || list->current == NULL || list->current->next == NULL)
     return NULL;
-  lista->current = lista->current->next;
-  return lista->current->data;
+  list->current = list->current->next;
+  return list->current->data;
 }
 
-void *lastList(List *lista) {
-  if (lista == NULL || lista->tail == NULL)
+void *lastList(List *list) {
+  if (list == NULL || list->tail == NULL)
     return NULL;
-  lista->current = lista->tail;
-  return lista->current->data;
+  list->current = list->tail;
+  return list->current->data;
 }
 
 void *prevList(List *list) {
@@ -67,25 +67,27 @@ void *prevList(List *list) {
 }
 
 void pushFront(List *list, void *data) {
-    Node *node = (Node *)malloc(sizeof(Node));
-    if (node == NULL) {
-        fprintf(stderr, "Error: Unable to allocate memory for node.\n");
-        exit(EXIT_FAILURE);
-    }
-    node->data = data;
-    node->prev = NULL;
-    node->next = list->head;
-    if (list->head == NULL) {
-        list->tail = node;
-    } else {
-        list->head->prev = node;
-    }
-    list->head = node;
+  Node *node = (Node *)malloc(sizeof(Node));
+  if (node == NULL)
+    exit(EXIT_FAILURE);
+  node->data = data;
+  node->prev = NULL;
+  node->next = list->head;
+  if (list->head == NULL)
+    list->tail = node;
+  else
+    list->head->prev = node;
+  list->head = node;
 }
 
-void pushBack(List * list, void * data) {
-    list->current = list->tail;
-    pushCurrent(list,data);
+void pushBack(List *list, void *data) {
+  Node *node = (Node *)malloc(sizeof(Node));
+  if (node == NULL) 
+    exit(EXIT_FAILURE);
+  node->data = data;
+  node->next = NULL;
+  node->prev = list->tail;
+    
 }
 
 void pushCurrent(List * list, void * data) {

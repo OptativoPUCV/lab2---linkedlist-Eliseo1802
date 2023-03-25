@@ -81,17 +81,20 @@ void pushFront(List *list, void *data) {
 }
 
 void pushBack(List *list, void *data) {
-  Node *node = (Node *)malloc(sizeof(Node));
-  if (node == NULL) 
-    exit(EXIT_FAILURE);
-  node->data = data;
-  node->next = NULL;
-  node->prev = list->tail;
-  if (list->tail == NULL)
-    list->head = node;
-  else
-    list->tail->next = node;
-  list->tail = node;
+    Node *node = (Node *)malloc(sizeof(Node));
+    if (node == NULL) {
+        fprintf(stderr, "Error: Unable to allocate memory for node.\n");
+        exit(EXIT_FAILURE);
+    }
+    node->data = data;
+    node->next = NULL;
+    node->prev = list->tail;
+    if (list->tail == NULL) {
+        list->head = node;
+    } else {
+        list->tail->next = node;
+    }
+    list->tail = node;
 }
 
 void pushCurrent(List * list, void * data) {

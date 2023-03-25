@@ -121,9 +121,25 @@ void *popFront(List *list) {
     return data;
 }
 
-void * popBack(List * list) {
-    list->current = list->tail;
-    return popCurrent(list);
+void *popBack(List *list) {
+    if (list == NULL || list->tail == NULL) {
+        return NULL;
+    }
+    Node *node = list->tail;
+    void *data = node->data;
+    if (list->head == list->tail) {
+        list->head = NULL;
+        list->tail = NULL;
+        list->current = NULL;
+    } else {
+        list->tail = node->prev;
+        list->tail->next = NULL;
+        if (list->current == node) {
+            list->current = list->tail;
+        }
+    }
+    free(node);
+    return data;
 }
 
 void * popCurrent(List * list) {

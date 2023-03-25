@@ -121,7 +121,7 @@ void *popFront(List *list) {
     return data;
 }
 
-void *popBack(List *list) {
+/*void *popBack(List *list) {
     if (list == NULL || list->tail == NULL) {
         return NULL;
     }
@@ -140,7 +140,7 @@ void *popBack(List *list) {
     }
     free(node);
     return data;
-}
+}*/
 
 void *popCurrent(List *list) {
     if (list == NULL || list->current == NULL) {

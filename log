@@ -183,3 +183,9 @@ list.c:96:1: error: expected identifier or ‘(’ before ‘}’ token
       | ^
 Compilation failed
 4b28d23
+Sun 26 Mar 2023 11:54:13 PM UTC: 
+ list.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  12|0
+total_score: 70/70
+bf6ff93

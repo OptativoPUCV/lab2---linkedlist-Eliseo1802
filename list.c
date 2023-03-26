@@ -91,7 +91,6 @@ void pushBack(List *list, void *data) {
     list->head = node;
   else
     list->tail->next = node;
-  }
   list->tail = node;
 }
 
